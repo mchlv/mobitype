@@ -1,0 +1,497 @@
+// MIXINS
+// RESPONSIVE MIXIN
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+
+
+// END OF MIXINS 
+
+
+// CUSTOM ANIMATIONS
+
+.heartbeat {
+	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+          animation: heartbeat 1.5s ease-in-out infinite both;
+         
+}
+
+.shadow-pulse {
+  animation: shadow-pulse 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+            transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+
+// 
+
+@keyframes shadow-pulse
+{
+     0% {
+          box-shadow: 0 0 0 0px rgba(255, 0, 0, 0.2);
+          border-radius: 100%;
+     }
+     100% {
+          box-shadow: 0 0 0 35px rgba(255, 0, 0, 0);
+     }
+}
+
+
+// END CUSTOM ANIMATIONS
+
+
+
+// GLOBAL SETTINGS
+
+
+.col-lg-4 {
+  width: 33%;
+  height: 100%;
+}
+
+// .row {
+//   height: 100vh;
+//   width: 100%;
+//   margin-left: 0px !important;
+// }
+
+* {
+  box-sizing: border-box;
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+  }
+  h1, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+  }
+  line-height: 1.75rem;
+  @include sm {
+    display: none;
+  }
+}
+
+
+// CONTENT
+
+.headRow {
+  justify-content: center;
+  height: 100vh;
+  // background: whitesmoke;
+  box-shadow: 4px 4px 8px grey;
+  .mainHeading {
+    margin-top: 1rem;
+    max-width: 50%;
+    // background: #fcfcfc;
+    border-radius: 8% 8% 0 0;
+    padding: 4.5%;
+    h1 {
+      padding-bottom: 1.3%;
+      font-weight: bold;
+      font-family: 'roboto', sans-serif;
+    }
+  }
+}
+
+.contentRow {
+  height: 100vh;
+  margin: 0 auto;
+  .phoneScreen {
+    text-align: center;
+    margin-top: 7%;
+    height: 68%;
+    position: relative;
+    h1 {
+      font-family: 'Crimson Text', serif;
+    }
+    // FIRST SCREEN, GREY HALF
+    .appScreen1{
+      height: 70%;
+      padding: 2%;
+      padding-top: 25%;
+      .appGrey {
+        margin-top: 20%;
+        background: #333333;
+        border-radius: 50px 50px 20px 20px;
+        height: 120%;
+        h4 {
+          padding: 10%;
+          color: whitesmoke;
+          font-size: 1.5rem;
+        }
+        p {
+          color: whitesmoke;
+          font-size: 1rem;
+          padding: 10%;
+        }
+      }       
+    }
+
+    // SECOND SCREEN - CHOOSING FONT
+    .appScreen2{
+      height: 70%;
+      text-align: left;
+      .topBar {
+        text-align: center;
+        color: #d8d8d8;
+        background: whitesmoke;
+        height: 15%;
+        width: 100%;
+        box-shadow: 1px 1px 8px grey;
+        padding-top: -35%;
+        p {
+          padding: 7%;
+          font-weight: bold;
+        }
+      }
+      .appBox {
+        text-align: left;
+        margin-top: 5%;
+        margin-bottom: 18%;
+        height: 100%;
+        padding: 8%;
+        p {
+          color: #333333;
+          font-size: .75rem;
+          text-align: left;
+        }
+        .Serif {
+          margin-top: 1%;
+          height: 50%;
+          img {
+            max-height: 60%;
+            text-align: center;
+          }
+          h4 {
+            font-size: 1rem;
+          }
+          .serif {
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+
+          }
+        }
+        .SansSerif{
+          margin-top: 8%;
+          height: 50%;
+          img {
+            max-height: 60%;
+            text-align: center;
+          }
+          .sansSerif {
+            font-family: 'Roboto', sans-serif;
+          }
+        }
+        p {
+          font-size: 1rem;
+        }
+
+      }
+      .appToolBar {
+        background: #333333;
+        border-radius: 40px 40px 20px 20px;
+        box-shadow: 1px 1px 8px grey;
+        height: 20%;
+        width: 100%;
+      }       
+    }
+    .whitespace {
+      margin: 1%;
+      width: 100%;
+      h1 {
+        font-size: 2.5rem;
+      }
+      h1, h3, p, a {
+        padding: 1%;
+        padding-bottom: 6%;
+      }
+      p {
+        font-size: 16px;
+        margin-bottom: 14%;
+      }
+      a {
+        font-size: 1.2rem;
+        padding: 6%;
+        background: lightgrey;
+        color: #333333;
+        border-radius: 8%;
+        font-weight: bold;
+        text-transform: uppercase;
+
+      }
+    }
+  }
+  // CENTER COLUMN, INSIDE PHONE SCREEN
+  .col-lg-3 {
+    width: 105%;
+  }
+  .content {
+    padding: 5rem;
+    padding-top: 18%;
+    p {
+      padding-top: 5%;
+    }
+  }
+}
+
+// iPhone template
+#template {
+  z-index: 1;
+  position: absolute;
+  top: 20rem;
+  left: 0;
+  text-align: center;
+  img {
+    max-height: 30%;
+    max-width: 26%;
+  }
+}
+
+// pop up divs
+
+.popUpWrapper {
+  margin-top: 4rem;
+  .popUpRight {
+    padding: 3rem;
+    background: #fefefe;
+    box-shadow: 2px 2px 8px lightgrey;
+    border-radius: 8%;
+    margin: 2%;
+    width: 90%;
+  }
+  p {
+    padding-top: 5%;
+  }
+  .serifPopUp {
+    p, h1, h2 {
+      font-family: 'Crimson Text', serif;
+    }
+    p {
+      font-size: 1.2rem;
+      padding-top: 5%;
+    }
+  }
+
+  h3 {
+    font-weight: bold;
+  }
+
+  .headingPopUp, .subPopUp, .bodyPopUp, .ctaPopUp {
+    margin-left: 7%;
+    p {
+      padding-top: 5%;
+    }
+  }
+
+  
+}
+
+
+// HOT SPOTS
+
+@mixin hotspot {
+  position: absolute;
+  z-index: 99999;
+  border-radius: 100%;
+  transition: background .5s ease;
+  height: 3rem;
+  width: 3rem;
+  background: rgba(255,0,0, 0.25);
+  a{
+    i {
+      margin-left: 1.75rem;
+      font-size: 2rem;
+      color: #333333;
+      transition: color .5s ease;
+    }
+    &:hover {
+      i {
+        opacity: .5;
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+.activeSpot {
+  animation-play-state: paused;
+  opacity: .5;
+  border-radius: 100%;
+}
+
+.hotspot1 {
+  @include hotspot;
+  top: 18%;
+  left: 35%;
+}
+
+.hotspot2 {
+ @include hotspot;
+  top: 50%;
+  left: 58%;
+}
+
+.hotspot3 {
+  @include hotspot;
+  top: 15%;
+  left: 72%;
+} 
+
+.hotspot4 {
+  @include hotspot;
+  top: 28%;
+  left: 10%;
+} 
+
+.hotspot5 {
+  @include hotspot;
+  top: 59%;
+  left: 68%;
+} 
+
+.hotspot6 {
+  @include hotspot;
+  top: 72%;
+  left: 50%;
+} 
+
+
+
+/////
+
+///// END HOT SPOTS
+
+// scroll progress 
+#scrollToLearn {
+  @include sm {
+    display: none;
+  }
+  transform: rotate(-90deg);
+  text-align: center;
+  position: absolute;
+  top: 25rem;
+  left: -7.5rem;
+  border-bottom: 2px solid #333333;
+  width: 20rem;
+ #scrollProgress {
+  background: #333333; 
+  height: .3rem; 
+  position:absolute; 
+  bottom:0; 
+  left:0;
+ }
+}
+
+// FOOTER
+
+footer {
+  height: 500px;
+  width: 100%;
+}
+
+
